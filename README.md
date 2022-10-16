@@ -31,6 +31,7 @@ instalar e configurar a biblioteca para que eu possa corrigir a atividade
 
 ## Compilação e Execução
 
+Necessário o OpenGL.
 
 
 

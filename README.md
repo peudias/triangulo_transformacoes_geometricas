@@ -12,11 +12,11 @@
 
 <p align="justify">
 
-1. Usando o OpenGL, gere a visualização de um triângulo.
-2. Aplique a transformação de Translação
-3. Aplique a transformação de Escala
-4. Aplique a transformação de Rotação
-5. Aplique a transformação de Reflexão
+## 1. Usando o OpenGL, gere a visualização de um triângulo.
+## 2. Aplique a transformação de Translação
+## 3. Aplique a transformação de Escala
+## 4. Aplique a transformação de Rotação
+## 5. Aplique a transformação de Reflexão
   
   Observações:
   
@@ -31,7 +31,9 @@ instalar e configurar a biblioteca para que eu possa corrigir a atividade
 
 ## Compilação e Execução
 
-Necessário o OpenGL.
+Informações mais detalhadas através da [Wiki](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/).
+
+Necessário o [OpenGL](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto).
 
 
 

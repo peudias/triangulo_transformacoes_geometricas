@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.12)
 
 project(compgrafica)
 
-add_executable(compgrafica main.cpp "main.cpp")
+# add_executable(compgrafica Translacao.cpp "Translacao.cpp")
+# add_executable(compgrafica Escala.cpp "Escala.cpp")
+ add_executable(compgrafica Rotacao.cpp "Translacao.cpp")
+# add_executable(compgrafica Reflexao.cpp "Translacao.cpp")
 
 target_include_directories(compgrafica PRIVATE 
 dependencias/glm
@@ -23,5 +26,3 @@ add_custom_command(TARGET compgrafica POST_BUILD
 COMMAND ${CMAKE_COMMAND}
 -E copy "${CMAKE_SOURCE_DIR}/dependencias/glew/bin/Release/x64/glew32.dll"
 "${CMAKE_BINARY_DIR}")
-
-

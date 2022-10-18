@@ -47,13 +47,14 @@ int main() {
 	std::cout << "Versão do OpenGL:" << glGetString(GL_VERSION) << std::endl;
 	std::cout << "Versão do GLS:" << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-	//PSSO 1: Definir um triângulo em coordenadas normalizadas
+	//PASSO 1: Definir um triângulo em coordenadas normalizadas
 	std::array<glm::vec3, 3> Triangle = {
 		glm::vec3{-1.0f, -1.0f, 0.0f},
 		glm::vec3{1.0f, -1.0f, 0.0f},
 		glm::vec3{0.0f,  1.0f, 0.0f},
 	};
-
+	
+	//Transformações
 	glTranslatef(.5, .3, 0);
 	glScalef(.2, .2, .2);
 	glRotatef(45, 0, 0, 1);
@@ -87,7 +88,7 @@ int main() {
 		VerticeProjetado /= VerticeProjetado.w;
 		Vertice = VerticeProjetado;
 	}
-	//FIM - PSSO 1
+	//FIM - PASSO 1
 
 	//PASSO 2: copiar os vértices do triângulo para a memória da GPU
 	// Variável que vai conter o identificador do buffer de vértices

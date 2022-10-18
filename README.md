@@ -30,19 +30,11 @@ glTranslatef(.5, .3, 0);
 glScalef(.2, .2, .2);
 ```	
 ### 4. Aplique a transformação de Rotação.
-
-
+```
+glRotatef(45, 0, 0, 1);
+```
 ### 5. Aplique a transformação de Reflexão.
   
-### Observações:
-  
-  • Envie somente os arquivos CMakelists.txt (caso tenha usado).
-
-  • Os arquivos cpp e hpp criados.
-
-  • Caso tenha usado alguma biblioteca diferente das usadas em aula, envie uma explicação de como 
-instalar e configurar a biblioteca para que eu possa corrigir a atividade.
-
 </p>
 
 ## Compilação e Execução

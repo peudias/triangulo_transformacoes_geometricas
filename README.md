@@ -12,7 +12,7 @@
 
 <p align="justify">
 
-### 1.  a visualização de um triângulo.
+### 1. Gerando a visualização de um triângulo.
 
 ```
 std::array<glm::vec3, 3> Triangle = {
@@ -21,19 +21,19 @@ std::array<glm::vec3, 3> Triangle = {
   glm::vec3{0.0f,  1.0f, 0.0f},
 };
 ```
-### 2. Aplique a transformação de Translação.
+### 2. Aplicando a transformação de Translação.
 ```
 glTranslatef(.5, .3, 0);
 ```	
-### 3. Aplique a transformação de Escala.
+### 3. Aplicando a transformação de Escala.
 ```
 glScalef(.2, .2, .2);
 ```	
-### 4. Aplique a transformação de Rotação.
+### 4. Aplicando a transformação de Rotação.
 ```
 glRotatef(45, 0, 0, 1);
 ```
-### 5. Aplique a transformação de Reflexão.
+### 5. Aplicando a transformação de Reflexão.
   
 </p>
 

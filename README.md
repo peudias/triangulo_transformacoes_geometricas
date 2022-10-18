@@ -21,13 +21,14 @@ std::array<glm::vec3, 3> Triangle = {
   glm::vec3{0.0f,  1.0f, 0.0f},
 };
 ```
-
 ### 2. Aplique a transformação de Translação.
-
-
+```
+glTranslatef(.5, .3, 0);
+```	
 ### 3. Aplique a transformação de Escala.
-
-
+```
+glScalef(.2, .2, .2);
+```	
 ### 4. Aplique a transformação de Rotação.
 
 

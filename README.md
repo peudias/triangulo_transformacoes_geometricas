@@ -1,6 +1,6 @@
 # Computação Gráfica
 
-## Lista de atividade 2.
+## Transformações Geométricas no Triângulo utilizando o OpenGL.
 
 <p>
 <div style="display: inline-block;">
@@ -12,7 +12,7 @@
 
 <p align="justify">
 
-### 1. Usando o OpenGL, gere a visualização de um triângulo.
+### 1.  a visualização de um triângulo.
 
 ```
 std::array<glm::vec3, 3> Triangle = {

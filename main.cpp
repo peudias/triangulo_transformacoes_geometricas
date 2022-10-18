@@ -1,17 +1,17 @@
 #include <iostream>
 //Biblioteca do OpenGL
 #include <GL/glew.h>
-//Biblioteca que ir· desenhar a tela
+//Biblioteca que ir√° desenhar a tela
 #include <GLFW/glfw3.h>
-//Biliotecas de validaÁ„o
+//Biliotecas de valida√ß√£o
 #include <cassert>
 #include <array>
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
-//Definindo as dimenÁıes da janela
-const int Width = 1920;
-const int Heigth = 1080;
+//Definindo as dimen√ß√µes da janela
+const int Width = 666;
+const int Heigth = 666;
 
 int main() {
 	setlocale(LC_ALL, "pt_BR");
@@ -19,8 +19,8 @@ int main() {
 	assert(glfwInit() == GLFW_TRUE);
 
 	//Construindo a janela
-	GLFWwindow* window = glfwCreateWindow(Width, Heigth, "Atv. 2 Comp. Grafica - Pedro Henrique Pires Dias", nullptr, nullptr);
-	//Verificar se a janela È nula
+	GLFWwindow* window = glfwCreateWindow(Width, Heigth, "Lista atv. 2 Comp. Grafica - Pedro Henrique Pires Dias", nullptr, nullptr);
+	//Verificar se a janela √© nula
 	assert(window);
 
 	//Definindo a janela de contexto
@@ -31,29 +31,33 @@ int main() {
 	std::cout << statusGlwInit << std::endl;
 	assert(glewInit() == GLEW_OK);
 
-	//Verificar a vers„o do OpenGL que est· sendo usando
+	//Verificar a vers√£o do OpenGL que est√° sendo usando
 	GLint GLMajorVersion = 0;
 	GLint GLMinorVersion = 0;
 
 	glGetIntegerv(GL_MAJOR_VERSION, &GLMajorVersion);
 	glGetIntegerv(GL_MINOR_VERSION, &GLMinorVersion);
 
-	std::cout << "Maior vers„o do OpenGL suportada:" << GLMajorVersion << std::endl;
-	std::cout << "Menor vers„o do OpenGL suportada:" << GLMinorVersion << std::endl;
+	std::cout << "Maior vers√£o do OpenGL suportada:" << GLMajorVersion << std::endl;
+	std::cout << "Menor vers√£o do OpenGL suportada:" << GLMinorVersion << std::endl;
 
-	//Obtendo informaÁıes do driver utilizado
+	//Obtendo informa√ß√µes do driver utilizado
 	std::cout << "Fabircante do driver de video:" << glGetString(GL_VENDOR) << std::endl;
 	std::cout << "Modelo da placa de video:" << glGetString(GL_RENDERER) << std::endl;
-	std::cout << "Vers„o do OpenGL:" << glGetString(GL_VERSION) << std::endl;
-	std::cout << "Vers„o do GLS:" << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+	std::cout << "Vers√£o do OpenGL:" << glGetString(GL_VERSION) << std::endl;
+	std::cout << "Vers√£o do GLS:" << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-	//PSSO 1: Definir um tri‚ngulo em coordenadas normalizadas
+	//PSSO 1: Definir um tri√¢ngulo em coordenadas normalizadas
 	std::array<glm::vec3, 3> Triangle = {
 		glm::vec3{-1.0f, -1.0f, 0.0f},
-		glm::vec3{ 1.0f, -1.0f, 0.0f},
-		glm::vec3{ 0.0f,  1.0f, 0.0f},
+		glm::vec3{1.0f, -1.0f, 0.0f},
+		glm::vec3{0.0f,  1.0f, 0.0f},
 	};
-	
+
+	glTranslatef(.5, .3, 0);
+	glScalef(.2, .2, .2);
+	glRotatef(45, 0, 0, 1);
+
 	//Aplicando o MVP
 	//Criando o Model
 	glm::mat4 MatrizModel = glm::identity<glm::mat4>();
@@ -72,7 +76,7 @@ int main() {
 	glm::mat4 MatrizProjection = glm::perspective(FoV, AspectioRate, Near, Far);
 
 	// Gerando o ModelViewProjection
-	// Usando a CPU para calculo, mas o idela È usar a GPU
+	// Usando a CPU para calculo, mas o idela √© usar a GPU
 	glm::mat4 ModelViewProjection = MatrizProjection * MatrizView * MatrizModel;
 
 	// Aplicando o MVP no triangulo
@@ -85,19 +89,19 @@ int main() {
 	}
 	//FIM - PSSO 1
 
-	//PASSO 2: copiar os vÈrtices do tri‚ngulo para a memÛria da GPU
-	// Vari·vel que vai conter o identificador do buffer de vÈrtices
+	//PASSO 2: copiar os v√©rtices do tri√¢ngulo para a mem√≥ria da GPU
+	// Vari√°vel que vai conter o identificador do buffer de v√©rtices
 	GLuint VertexBuffer;
 	
 	// Gerar um identificador glGenBuffers(NUMERO DE BUFFER, INDETIFICADOR);
 	glGenBuffers(1, &VertexBuffer);
 
-	//Ativar o buffer de vÈrtices, comandos v„o afetar o VertexBuffer.
+	//Ativar o buffer de v√©rtices, comandos v√£o afetar o VertexBuffer.
 	//O buffer para onde vamos copiar os vertices do triangulo.
 	glBindBuffer(GL_ARRAY_BUFFER, VertexBuffer);
 
-	// Passa para o OpenGL o ponteiro para os dados que ser„o copiados para GPU
-	// basicamente copia os dados para a memÛria de vÌdeo
+	// Passa para o OpenGL o ponteiro para os dados que ser√£o copiados para GPU
+	// basicamente copia os dados para a mem√≥ria de v√≠deo
 	// glBufferData(ORIGEM DOS DADOS, TAMANHO EM BYTES, PONTEIRO PARA OS DADOS
 	//				, TIPO DE USO DO BUFFER);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(Triangle), Triangle.data(), GL_STATIC_DRAW);
@@ -112,41 +116,42 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// DESENHAR INICIO
-		// Habilita o atributo na posiÁ„o 0, normalmente È o atributo de vÈrtices
-		// Esse vai ser o identificador que vamos usar no shader para ler a posiÁ„o
-		// de cada vÈrtice.
+		// Habilita o atributo na posi√ß√£o 0, normalmente √© o atributo de v√©rtices
+		// Esse vai ser o identificador que vamos usar no shader para ler a posi√ß√£o
+		// de cada v√©rtice.
 		glEnableVertexAttribArray(0);
 
 		// Diz para o OpenGL que o VertexBuffer vai ficar associado ao atributo 0
 		// glBindBuffer(TIPO, BUFFER CRIADO);
 		glBindBuffer(GL_ARRAY_BUFFER, VertexBuffer);
 
-		// Informa ao OpenGL onde, dentro do VertexBuffer, os vÈrtices est„o.
-		// Neste exemplo  o array Triangles È tudo
+		// Informa ao OpenGL onde, dentro do VertexBuffer, os v√©rtices est√£o.
+		// Neste exemplo  o array Triangles √© tudo
 		// glVertexAttribPointer(INDICE, QUANTIDADE DE VERTICES, TIPO
-		//							, SE AS POCI«’ES EST√O NORMALIZADAS, USADOS EM TEXTURAS
+		//							, SE AS POCI√á√ïES EST√ÉO NORMALIZADAS, USADOS EM TEXTURAS
 		//							, PONTEIRO);
 		glVertexAttribPointer(0, Triangle.size(), GL_FLOAT, GL_FALSE, 0, nullptr);
 
-		// Por fim, diz para o OpenGL desenhar o tri‚ngulo
-		// glDrawArrays(QUE OBJETO SER¡ DESENHADO, INDICE DO OBJETO
+		// Por fim, diz para o OpenGL desenhar o tri√¢ngulo
+		// glDrawArrays(QUE OBJETO SER√Å DESENHADO, INDICE DO OBJETO
 		//				, QUANTIDADE DE VERTICES PRA DESENHAR);
 		glDrawArrays(GL_TRIANGLES, 0, Triangle.size());
 
-		//Como boa pratica devemos Desliga o glBindBuffer e desabilitar o atributo da posiÁ„o
+		//Como boa pratica devemos Desliga o glBindBuffer e desabilitar o atributo da posi√ß√£o
 		//Desliga o glBindBuffer
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
-		//desabilitar o atributo da posiÁ„o
+		//desabilitar o atributo da posi√ß√£o
 		glDisableVertexAttribArray(0);
-		// DESENHAR FIM
 
+		// DESENHAR FIM
+		// 
 		//Processa todos os eventos na fila do GLFW
 		glfwPollEvents();
-		//Envia o conte˙do para desenhar na tela
+		//Envia o conte√∫do para desenhar na tela
 		glfwSwapBuffers(window);
 	}
 
-	//Desalocar o VertexBuffer da memÛria de video
+	//Desalocar o VertexBuffer da mem√≥ria de video
 	glDeleteBuffers(1, &VertexBuffer);
 
 	//Finaliza a biblioteca GLFW

@@ -13,9 +13,24 @@
 <p align="justify">
 
 ### 1. Usando o OpenGL, gere a visualização de um triângulo.
+
+```
+std::array<glm::vec3, 3> Triangle = {
+  glm::vec3{-1.0f, -1.0f, 0.0f},
+  glm::vec3{1.0f, -1.0f, 0.0f},
+  glm::vec3{0.0f,  1.0f, 0.0f},
+};
+```
+
 ### 2. Aplique a transformação de Translação.
+
+
 ### 3. Aplique a transformação de Escala.
+
+
 ### 4. Aplique a transformação de Rotação.
+
+
 ### 5. Aplique a transformação de Reflexão.
   
 ### Observações:

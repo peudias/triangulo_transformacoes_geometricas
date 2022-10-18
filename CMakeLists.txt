@@ -23,12 +23,3 @@ add_custom_command(TARGET compgrafica POST_BUILD
 COMMAND ${CMAKE_COMMAND}
 -E copy "${CMAKE_SOURCE_DIR}/dependencias/glew/bin/Release/x64/glew32.dll"
 "${CMAKE_BINARY_DIR}")
-
-add_executable(Vectors "Vectors.cpp")
-
-target_include_directories(Vectors PRIVATE dependencias/glm)
-
-
-add_executable(Matrizes "Matrizes.cpp")
-
-target_include_directories(Matrizes PRIVATE dependencias/glm)

@@ -8,9 +8,6 @@
 #include <array>
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
-#include <iomanip>
-#include <glm/gtx/string_cast.hpp>
-
 
 //Definindo as dimenções da janela
 const int Width = 666;
@@ -56,16 +53,16 @@ int main() {
 		glm::vec3{1.0f, -1.0f, 0.0f},
 		glm::vec3{0.0f,  1.0f, 0.0f},
 	};
-	
+
 	//move todas as coordenadas dos objetos ao longo dos eixos coordenados
 	glTranslatef(.5, .3, 0);
-	
+
 	//altera a escala do objeto ao logo dos eixos coordenados.
 	glScalef(.2, .2, .2);
-	
+
 	//gira o objeto ao redor do vetor (x,y,z). O giro é de Angulo graus, no sentido anti-horário
 	glRotatef(45, 0, 0, 1);
-	
+
 	//quando a escala é colocada com esses valores (-1), há a transformação geométrica de reflexão
 	glScalef(-1, -1, -1);
 
@@ -74,7 +71,7 @@ int main() {
 	glm::mat4 MatrizModel = glm::identity<glm::mat4>();
 
 	//Criando a View
-	glm::vec3 Eye{0, 10, 10 };
+	glm::vec3 Eye{ 0, 10, 10 };
 	glm::vec3 Center{ 0, 0, 0 };
 	glm::vec3 Up{ 0, 1, 0 };
 	glm::mat4 MatrizView = glm::lookAt(Eye, Center, Up);
@@ -103,7 +100,7 @@ int main() {
 	//PASSO 2: copiar os vértices do triângulo para a memória da GPU
 	// Variável que vai conter o identificador do buffer de vértices
 	GLuint VertexBuffer;
-	
+
 	// Gerar um identificador glGenBuffers(NUMERO DE BUFFER, INDETIFICADOR);
 	glGenBuffers(1, &VertexBuffer);
 

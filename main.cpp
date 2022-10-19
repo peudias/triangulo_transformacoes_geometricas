@@ -56,10 +56,15 @@ int main() {
 		glm::vec3{1.0f, -1.0f, 0.0f},
 		glm::vec3{0.0f,  1.0f, 0.0f},
 	};
-
+	
+	//move todas as coordenadas dos objetos ao longo dos eixos coordenados
 	glTranslatef(.5, .3, 0);
+	
 	glScalef(.2, .2, .2);
+	
+	//gira o objeto ao redor do vetor (x,y,z). O giro é de Angulo graus, no sentido anti-horário
 	glRotatef(45, 0, 0, 1);
+	
 	glScalef(-1, -1, -1);
 
 	//Aplicando o MVP

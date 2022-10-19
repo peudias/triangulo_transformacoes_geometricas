@@ -8,6 +8,9 @@
 #include <array>
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
+#include <iomanip>
+#include <glm/gtx/string_cast.hpp>
+
 
 //Definindo as dimenções da janela
 const int Width = 666;
@@ -38,26 +41,26 @@ int main() {
 	glGetIntegerv(GL_MAJOR_VERSION, &GLMajorVersion);
 	glGetIntegerv(GL_MINOR_VERSION, &GLMinorVersion);
 
-	std::cout << "Maior versão do OpenGL suportada:" << GLMajorVersion << std::endl;
-	std::cout << "Menor versão do OpenGL suportada:" << GLMinorVersion << std::endl;
+	//std::cout << "Maior versão do OpenGL suportada:" << GLMajorVersion << std::endl;
+	//std::cout << "Menor versão do OpenGL suportada:" << GLMinorVersion << std::endl;
 
 	//Obtendo informações do driver utilizado
-	std::cout << "Fabircante do driver de video:" << glGetString(GL_VENDOR) << std::endl;
-	std::cout << "Modelo da placa de video:" << glGetString(GL_RENDERER) << std::endl;
-	std::cout << "Versão do OpenGL:" << glGetString(GL_VERSION) << std::endl;
-	std::cout << "Versão do GLS:" << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+	//std::cout << "Fabircante do driver de video:" << glGetString(GL_VENDOR) << std::endl;
+	//std::cout << "Modelo da placa de video:" << glGetString(GL_RENDERER) << std::endl;
+	//std::cout << "Versão do OpenGL:" << glGetString(GL_VERSION) << std::endl;
+	//std::cout << "Versão do GLS:" << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-	//PASSO 1: Definir um triângulo em coordenadas normalizadas
+	//PSSO 1: Definir um triângulo em coordenadas normalizadas
 	std::array<glm::vec3, 3> Triangle = {
 		glm::vec3{-1.0f, -1.0f, 0.0f},
 		glm::vec3{1.0f, -1.0f, 0.0f},
 		glm::vec3{0.0f,  1.0f, 0.0f},
 	};
-	
-	//Transformações
+
 	glTranslatef(.5, .3, 0);
 	glScalef(.2, .2, .2);
 	glRotatef(45, 0, 0, 1);
+	glScalef(-1, -1, -1);
 
 	//Aplicando o MVP
 	//Criando o Model
@@ -88,7 +91,7 @@ int main() {
 		VerticeProjetado /= VerticeProjetado.w;
 		Vertice = VerticeProjetado;
 	}
-	//FIM - PASSO 1
+	//FIM - PSSO 1
 
 	//PASSO 2: copiar os vértices do triângulo para a memória da GPU
 	// Variável que vai conter o identificador do buffer de vértices
@@ -148,6 +151,7 @@ int main() {
 		// 
 		//Processa todos os eventos na fila do GLFW
 		glfwPollEvents();
+
 		//Envia o conteúdo para desenhar na tela
 		glfwSwapBuffers(window);
 	}

@@ -21,6 +21,12 @@ std::array<glm::vec3, 3> Triangle = {
   glm::vec3{0.0f,  1.0f, 0.0f},
 };
 ```
+
+#### Imagem gerada sem as transformações aplicadas
+
+![image](https://user-images.githubusercontent.com/84406892/196693471-9c066413-460f-4f98-ae20-1d06195d51b5.png)
+
+
 ### 2. Aplicando a transformação de `Translação`.
 ```
 glTranslatef(.5, .3, 0);
@@ -37,6 +43,12 @@ glRotatef(45, 0, 0, 1);
 ```
 glScalef(-1, -1, -1);
 ```	
+
+#### Imagem gerada após as transformações serem aplicadas.
+
+Note que houve translação do objeto, diminuição da escala, rotação e reflexão do mesmo.
+![image](https://user-images.githubusercontent.com/84406892/196693765-687f4112-4dd2-4431-a030-587df78c36e2.png)
+
   
 </p>
 

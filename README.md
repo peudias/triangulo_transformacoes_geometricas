@@ -26,7 +26,6 @@ std::array<glm::vec3, 3> Triangle = {
 
 ![image](https://user-images.githubusercontent.com/84406892/196693471-9c066413-460f-4f98-ae20-1d06195d51b5.png)
 
-
 ### 2. Aplicando a transformação de `Translação`.
 ```
 glTranslatef(.5, .3, 0);

@@ -60,11 +60,13 @@ int main() {
 	//move todas as coordenadas dos objetos ao longo dos eixos coordenados
 	glTranslatef(.5, .3, 0);
 	
+	//altera a escala do objeto ao logo dos eixos coordenados.
 	glScalef(.2, .2, .2);
 	
 	//gira o objeto ao redor do vetor (x,y,z). O giro é de Angulo graus, no sentido anti-horário
 	glRotatef(45, 0, 0, 1);
 	
+	//quando a escala é colocada com esses valores (-1), há a transformação geométrica de reflexão
 	glScalef(-1, -1, -1);
 
 	//Aplicando o MVP

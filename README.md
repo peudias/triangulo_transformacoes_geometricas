@@ -34,6 +34,9 @@ glScalef(.2, .2, .2);
 glRotatef(45, 0, 0, 1);
 ```
 ### 5. Aplicando a transformação de `Reflexão`.
+```
+glScalef(-1, -1, -1);
+```	
   
 </p>
 

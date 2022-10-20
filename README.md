@@ -43,9 +43,10 @@ glRotatef(45, 0, 0, 1);
 glScalef(-1, -1, -1);
 ```	
 
-#### Imagem gerada após as transformações serem aplicadas.
+## Imagem gerada após as transformações serem aplicadas.
 
 Note que houve translação do objeto, diminuição da escala, rotação e reflexão do mesmo.
+
 ![image](https://user-images.githubusercontent.com/84406892/196693765-687f4112-4dd2-4431-a030-587df78c36e2.png)
 
   

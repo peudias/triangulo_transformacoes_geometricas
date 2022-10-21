@@ -54,10 +54,17 @@ Note que houve translação do objeto, diminuição da escala, rotação e refle
 
 ## Compilação e Execução
 
-Informações mais detalhadas através da [Wiki](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/).
+Tutorial detalhado através da [Wiki](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/).
 
-Necessário o [OpenGL](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto).
+Necessário:  
 
+- [OpenGL](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto#opengl).
+
+- [CMake](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto#cmake).
+
+- [Configuração básica de um projeto com OpenGL](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto#configura%C3%A7%C3%A3o-b%C3%A1sica-de-um-projeto-com-opengl).
+
+- [Dependências](https://github.com/phpdias/triangulo_transformacoes_geometricas/wiki/Configurando-o-Projeto#depend%C3%AAncias).
 
 
 

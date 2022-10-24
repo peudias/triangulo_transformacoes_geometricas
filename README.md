@@ -73,15 +73,15 @@ Necessário:
 <div style="display: inline-block;">
 
 <a href="https://t.me/phpdias" target="_blank">
-  <img align="center" src="https://img.shields.io/badge/-phpdias-05122A?style=flat&logo=telegram" alt="linkedin"/>
+  <img align="center" src="https://img.shields.io/badge/-phpdias-05122A?style=flat&logo=telegram" alt="telegram"/>
 </a>
   
 <a href="https://linkedin.com/in/phpd" target="_blank">
   <img align="center" src="https://img.shields.io/badge/-phpd-05122A?style=flat&logo=linkedin" alt="linkedin"/>
 </a>
 
-<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20Source%20Dynamic%20Lists">
- <img align="center" src="https://img.shields.io/badge/-phpdias@outlook.com-05122A?style=flat&logo=email" alt="linkedin"/>
+<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20Transformacoes%20Geometrica%20Triangulo">
+ <img align="center" src="https://img.shields.io/badge/-phpdias@outlook.com-05122A?style=flat&logo=email" alt="email"/>
 </a>
 
 </div>
